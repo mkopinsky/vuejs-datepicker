@@ -23,6 +23,7 @@
       :required="required"
       :bootstrapStyling="bootstrapStyling"
       :use-utc="useUtc"
+      :show-calendar-on-focus="showCalendarOnFocus"
       @showCalendar="showCalendar"
       @closeCalendar="close"
       @typedDate="setTypedDate"
@@ -155,7 +156,8 @@ export default {
     maximumView: {
       type: String,
       default: 'year'
-    }
+    },
+    showCalendarOnFocus: Boolean
   },
   data () {
     const startDate = this.openDate ? new Date(this.openDate) : new Date()
@@ -254,6 +256,7 @@ export default {
         return this.close(true)
       }
       this.setInitialView()
+      this.$emit('opened')
     },
     /**
      * Sets the initial picker page view: day, month or year
