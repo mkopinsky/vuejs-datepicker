@@ -148,6 +148,7 @@ export default {
     disabled: Boolean,
     required: Boolean,
     typeable: Boolean,
+    formatTypedDates: Boolean,
     useUtc: Boolean,
     minimumView: {
       type: String,
@@ -442,6 +443,9 @@ export default {
       if (!this.isInline) {
         if (emitEvent) {
           this.$emit('closed')
+        }
+        if (this.formatTypedDates) {
+          this.resetTypedDate = new Date()
         }
         document.removeEventListener('click', this.clickOutside, false)
       }

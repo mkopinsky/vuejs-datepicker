@@ -126,6 +126,7 @@ Inline always open version
 | disabled                      | Boolean         | false       | If true, disable Datepicker on screen    |
 | required                      | Boolean         | false       | Sets html required attribute on input    |
 | typeable                      | Boolean         | false       | If true, allow the user to type the date |
+| format-typed-dates            | Boolean         | false       | If true, user-entered dates will be reformatted (via `format` as soon as the calendar is closed |
 | use-utc                       | Boolean         | false       | use UTC for time calculations            |
 | open-date                     | Date\|String    |             | If set, open on that date                |
 | minimum-view                  | String          | 'day'       | If set, lower-level views won't show     |
